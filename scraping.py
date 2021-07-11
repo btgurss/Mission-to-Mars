@@ -94,6 +94,8 @@ def mars_facts():
 
     # Assign columns and set index of dataframe
     df.columns=['Description', 'Mars', 'Earth']
+
+    #Dropping a row to make the table look better
     df.drop(index=df.index[0], axis=0, inplace=True)
 
     # Convert dataframe into HTML format, add bootstrap
@@ -106,6 +108,8 @@ if __name__ == "__main__":
 def mars_images():
     executable_path = {'executable_path': ChromeDriverManager().install()}
     browser = Browser('chrome', **executable_path, headless=True)
+
+    #Pushing out url for new website
     url = 'https://marshemispheres.com/'
     browser.visit(url)
 
